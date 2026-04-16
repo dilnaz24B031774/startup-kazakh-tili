@@ -1,16 +1,29 @@
 const SiteFooter = () => (
-  <footer className="flex items-center justify-between flex-wrap gap-4 px-5 md:px-10 py-8" style={{ background: "#111" }}>
-    <div className="font-display text-2xl text-primary tracking-[2px]">САҚТАН</div>
-    <div className="flex gap-5">
-      {["Мәселе", "Схемалар", "Ойын", "Ресурстар"].map((l) => (
-        <a key={l} href={`#${l === "Мәселе" ? "problem" : l === "Схемалар" ? "schemes" : l === "Ойын" ? "game" : "resources"}`} className="text-[13px] transition-colors hover:text-background" style={{ color: "#666" }}>
-          {l}
-        </a>
-      ))}
-    </div>
-    <div className="flex items-center gap-3">
-      <span className="text-xs" style={{ color: "#555" }}>Алаяқтыққа тап болдыңыз ба?</span>
-      <span className="text-base font-extrabold" style={{ color: "white" }}>102</span>
+  <footer className="border-t border-border bg-background py-8 px-5 md:px-10">
+    <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+      <div className="flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary animate-glow-pulse" />
+        <div className="font-display text-2xl text-foreground tracking-[2px]">
+          САҚ<span className="text-primary">ТАН</span>
+        </div>
+        <span className="font-mono text-[10px] text-muted-foreground ml-2">// 2025</span>
+      </div>
+      <div className="flex gap-4 flex-wrap">
+        {[
+          { label: "Мәселе", href: "#problem" },
+          { label: "Схемалар", href: "#schemes" },
+          { label: "Ойын", href: "#game" },
+          { label: "Ресурстар", href: "#resources" },
+        ].map((l) => (
+          <a key={l.label} href={l.href} className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary">
+            {l.label}
+          </a>
+        ))}
+      </div>
+      <div className="flex items-center gap-3 border border-primary/40 rounded px-3 py-1.5 bg-primary/5">
+        <span className="text-xs text-ink2">Алаяқтыққа тап болдыңыз ба?</span>
+        <span className="font-display text-xl font-extrabold text-primary neon-text">102</span>
+      </div>
     </div>
   </footer>
 );

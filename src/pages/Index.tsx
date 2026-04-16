@@ -10,10 +10,10 @@ import TeamSection from "@/components/TeamSection";
 import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => (
-  <>
+  <div className="bg-background min-h-screen">
     <Navbar />
     <HeroSection />
-    <div className="h-[3px] red-gradient" />
+    <div className="h-px red-gradient" />
     <ProblemSection />
     <SchemesSection />
     <WarningsSection />
@@ -22,7 +22,7 @@ const Index = () => (
     <ResourcesSection />
     <TeamSection />
     <SiteFooter />
-  </>
+  </div>
 );
 
 export default Index;

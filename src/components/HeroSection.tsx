@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import heroCyber from "@/assets/hero-cyber.jpg";
 
 const CASES_PER_SECOND = 44800 / 365 / 24 / 3600;
 
@@ -18,80 +19,92 @@ const HeroSection = () => {
   }, [startTime]);
 
   return (
-    <section id="hero" className="min-h-screen pt-[100px] pb-16 px-5 md:px-10 relative overflow-hidden">
-      {/* Background shape */}
-      <div
-        className="absolute top-0 right-0 w-[55%] h-full bg-surface z-0 hidden md:block"
-        style={{ clipPath: "polygon(8% 0, 100% 0, 100% 100%, 0% 100%)" }}
-      />
+    <section id="hero" className="min-h-screen pt-[100px] pb-16 px-5 md:px-10 relative overflow-hidden cyber-grid-fade">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroCyber}
+          alt="Кибералаяқ компьютер артында"
+          className="w-full h-full object-cover opacity-25"
+          width={1280}
+          height={1280}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+        <div className="absolute inset-0 scan-lines" />
+      </div>
 
       <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center relative z-10 max-w-7xl mx-auto">
         {/* Left */}
         <div>
-          <div className="inline-block text-[11px] font-bold tracking-[2px] uppercase text-primary bg-primary-light px-3 py-1 rounded mb-5">
-            Қазақстан · 2025
+          <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[2px] uppercase text-primary border border-primary/40 bg-primary/10 px-3 py-1.5 rounded mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-glow-pulse" />
+            SYSTEM // QAZAQSTAN · 2025
           </div>
-          <h1 className="font-display text-[clamp(64px,8vw,100px)] leading-[0.95] text-foreground mb-6 tracking-wide">
+          <h1 className="font-display text-[clamp(60px,8vw,104px)] leading-[0.92] text-foreground mb-6 tracking-wide">
             АЛАЯҚТЫҚ
             <br />
-            <span className="text-primary">САҒАН</span>
+            <span className="text-primary neon-text">САҒАН</span>
             <br />
             ДА ТИЕ
             <br />
-            АЛАДЫ
+            АЛАДЫ<span className="text-primary animate-blink">_</span>
           </h1>
-          <p className="text-base leading-relaxed text-ink2 max-w-[440px] mb-9">
-            Цифрлық алаяқтық — ең жылдам өсіп жатқан қылмыс түрі. Өзіңді және жақындарыңды қорғауды үйрен.
+          <p className="text-base leading-relaxed text-ink2 max-w-[460px] mb-9">
+            Цифрлық алаяқтық — қазіргі заманның ең жылдам өсіп жатқан қылмыс түрі.
+            Өзіңді және жақындарыңды қорғауды үйрен.
           </p>
           <div className="flex gap-3 flex-wrap">
             <a
               href="#game"
-              className="px-7 py-3.5 bg-primary text-primary-foreground rounded font-bold text-sm hover:bg-primary-dark transition-all hover:-translate-y-0.5 inline-block"
+              className="px-7 py-3.5 bg-primary text-primary-foreground rounded font-mono text-xs uppercase tracking-wider font-bold hover:bg-primary-glow transition-all hover:-translate-y-0.5 inline-flex items-center gap-2 glow-border"
             >
-              Тексеріп көр
+              ▶ Тексеріп көр
             </a>
             <a
               href="#problem"
-              className="px-7 py-3.5 bg-transparent text-foreground border-2 border-foreground rounded font-bold text-sm hover:bg-foreground hover:text-background transition-all inline-block"
+              className="px-7 py-3.5 bg-transparent text-foreground border border-border rounded font-mono text-xs uppercase tracking-wider font-bold hover:border-cyan hover:text-cyan transition-all inline-flex items-center gap-2"
             >
-              Толығырақ
+              [ Толығырақ ]
             </a>
           </div>
         </div>
 
         {/* Right — Stats */}
         <div className="flex flex-col gap-4">
-          <div className="bg-background border border-border rounded-xl p-6 relative overflow-hidden hover:-translate-y-1 transition-transform">
-            <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
-            <div className="font-display text-[52px] text-primary leading-none">₸140 МЛД</div>
-            <div className="text-[13px] text-muted-foreground font-medium mt-1">
-              2023 жылы қазақстандықтар жоғалтқан сома
+          <div className="cyber-card corner-brackets p-6 hover:-translate-y-1 transition-transform">
+            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-2">// зиян · 2023</div>
+            <div className="font-display text-[56px] text-primary leading-none neon-text">₸140 МЛРД</div>
+            <div className="text-[13px] text-muted-foreground font-medium mt-2">
+              Қазақстандықтар жоғалтқан жалпы сома
             </div>
-            <div className="text-[11px] text-muted-foreground/60 mt-1.5">Бас прокуратура, 2024</div>
+            <div className="text-[10px] text-muted-foreground/60 mt-1.5 font-mono">[ src: Бас прокуратура, 2024 ]</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-background border border-border rounded-xl p-5 hover:-translate-y-1 transition-transform">
+            <div className="cyber-card p-5 hover:-translate-y-1 transition-transform">
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">victims</div>
               <div className="font-display text-4xl text-foreground leading-none">44 000+</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">Жәбірленуші — тек 2023 жылы</div>
+              <div className="text-xs text-muted-foreground font-medium mt-2">Жәбірленуші — тек 2023 жылы</div>
             </div>
-            <div className="bg-background border border-border rounded-xl p-5 hover:-translate-y-1 transition-transform">
-              <div className="font-display text-4xl text-foreground leading-none">10 ЕСЕГЕ</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">Өсті — соңғы 7 жылда</div>
+            <div className="cyber-card p-5 hover:-translate-y-1 transition-transform">
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">growth</div>
+              <div className="font-display text-4xl text-foreground leading-none">10 ЕСЕ</div>
+              <div className="text-xs text-muted-foreground font-medium mt-2">Соңғы 7 жылдағы өсу</div>
             </div>
           </div>
 
-          <div className="bg-primary text-primary-foreground rounded-lg px-5 py-3.5 text-[13px] font-semibold leading-relaxed">
-            <span className="text-xs opacity-80">Бүгін Қазақстанда тіркелген алаяқтық:</span>
-            <span className="font-display text-[32px] block">{counter}</span>
-            <span className="text-[11px] opacity-70">шамамен (ресми статистика негізінде)</span>
+          <div className="bg-primary/10 border border-primary/40 rounded-lg px-5 py-4 text-[13px] font-semibold leading-relaxed glow-border">
+            <div className="font-mono text-[10px] text-primary uppercase tracking-wider mb-1">// LIVE COUNTER</div>
+            <span className="text-xs text-ink2">Бүгін Қазақстанда тіркелген алаяқтық:</span>
+            <span className="font-display text-[36px] block text-primary neon-text">{counter}</span>
+            <span className="text-[10px] text-muted-foreground font-mono">[ ресми статистика негізіндегі шамалас есеп ]</span>
           </div>
         </div>
       </div>
 
       {/* Scroll hint */}
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 hidden md:flex">
-        <span className="text-[11px] text-muted-foreground font-semibold tracking-wider uppercase">Төмен</span>
+      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5">
+        <span className="text-[10px] text-muted-foreground font-mono tracking-wider uppercase">scroll ↓</span>
         <div className="w-1.5 h-1.5 rounded-full bg-primary" style={{ animation: "scrollPulse 1.5s ease infinite" }} />
       </div>
     </section>
