@@ -24,7 +24,7 @@ const GameSection = () => {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<(boolean | null)[]>([]);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [answered, setAnswered] = useState(false);
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
   const [timedOut, setTimedOut] = useState(false);
