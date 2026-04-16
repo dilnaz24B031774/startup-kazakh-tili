@@ -36,7 +36,7 @@ const Navbar = () => {
         <span className="font-display text-[26px] text-foreground tracking-[3px]">
           САҚ<span className="text-primary neon-text">ТАН</span>
         </span>
-        <span className="font-mono text-[10px] text-muted-foreground hidden sm:inline">2025</span>
+        
       </a>
 
       {/* Desktop links */}
