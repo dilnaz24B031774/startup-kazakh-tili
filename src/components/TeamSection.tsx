@@ -27,7 +27,7 @@ const TeamSection = () => (
               {m.initials}
             </div>
             <h3 className="font-display text-xl text-foreground mb-1 tracking-wide">{m.name}</h3>
-            <div className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-3">// {m.role}</div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-3">{m.role}</div>
             <div className="text-[13px] leading-relaxed italic text-ink2">{m.quote}</div>
           </div>
         ))}
