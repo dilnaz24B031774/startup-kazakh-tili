@@ -19,6 +19,7 @@ const Index = () => (
     <SchemesSection />
     <WarningsSection />
     <FutureSection />
+    <SolutionsSection />
     <GameSection />
     <ResourcesSection />
     <TeamSection />
