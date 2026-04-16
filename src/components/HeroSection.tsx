@@ -111,7 +111,7 @@ const HeroSection = () => {
 
       {/* Scroll hint */}
       <div className="absolute bottom-9 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1.5">
-        <span className="text-[10px] text-muted-foreground font-mono tracking-wider uppercase">scroll ↓</span>
+        <span className="text-[10px] text-muted-foreground font-mono tracking-wider uppercase">Төмен ↓</span>
         <div className="w-1.5 h-1.5 rounded-full bg-cyan" style={{ animation: "scrollPulse 1.5s ease infinite" }} />
       </div>
     </section>
