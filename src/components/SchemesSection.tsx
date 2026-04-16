@@ -42,7 +42,7 @@ const SchemesSection = () => {
               >
                 <div className="h-px red-gradient" />
                 <div className="p-7">
-                  <div className="font-mono text-[11px] text-cyan uppercase tracking-wider mb-2">[ scheme.{s.num} ]</div>
+                  <div className="font-mono text-[11px] text-cyan uppercase tracking-wider mb-2">Схема · {s.num}</div>
                   <div className="font-display text-5xl text-primary/20 leading-none">{s.num}</div>
                   <h3 className="font-display text-2xl text-foreground mt-2 mb-1 tracking-wide">{s.title}</h3>
                   <div className="text-xs text-muted-foreground font-mono">{s.target}</div>
