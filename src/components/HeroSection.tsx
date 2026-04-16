@@ -43,7 +43,7 @@ const HeroSection = () => {
         <div>
           <div className="inline-flex items-center gap-2 font-mono text-[11px] font-bold tracking-[2px] uppercase text-cyan border border-cyan/30 bg-background/60 backdrop-blur-md px-3 py-1.5 rounded mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan animate-glow-pulse" />
-            SYSTEM // QAZAQSTAN · 2025
+            Қазақстан · 2025
           </div>
           <h1 className="font-display text-[clamp(60px,8vw,104px)] leading-[0.92] text-foreground mb-6 tracking-wide">
             АЛАЯҚТЫҚ
