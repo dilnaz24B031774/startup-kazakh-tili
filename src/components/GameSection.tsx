@@ -131,7 +131,7 @@ const GameSection = () => {
           {!gameOver ? (
             <>
               <div className="text-center font-mono text-[11px] uppercase tracking-wider text-cyan mb-5">
-                [ Сұрақ {current + 1} / {questions.length} ]
+                Сұрақ {current + 1} / {questions.length}
               </div>
 
               {/* Phone */}
