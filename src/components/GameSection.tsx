@@ -24,7 +24,7 @@ const GameSection = () => {
   const [current, setCurrent] = useState(0);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<(boolean | null)[]>([]);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [answered, setAnswered] = useState(false);
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
   const [timedOut, setTimedOut] = useState(false);
@@ -39,7 +39,7 @@ const GameSection = () => {
   }, []);
 
   const startTimer = useCallback(() => {
-    setTimeLeft(10);
+    setTimeLeft(60);
     stopTimer();
     timerRef.current = window.setInterval(() => {
       setTimeLeft((prev) => {
@@ -87,7 +87,7 @@ const GameSection = () => {
     setCurrent(0);
     setScore(0);
     setResults([]);
-    setTimeLeft(10);
+    setTimeLeft(60);
     setAnswered(false);
     setLastCorrect(null);
     setTimedOut(false);
@@ -109,7 +109,7 @@ const GameSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="section-label">Интерактив</div>
         <h2 className="section-title">АЛАЯҚТЫ <span className="text-primary neon-text">ТАП</span></h2>
-        <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 10 секунд.</p>
+        <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 60 секунд.</p>
 
         <div className="max-w-[680px] mx-auto">
           {/* Score chips */}
@@ -161,7 +161,7 @@ const GameSection = () => {
               {!answered && (
                 <div className="text-center mb-5">
                   <div className="h-1 bg-border rounded-full overflow-hidden max-w-[340px] mx-auto mb-1.5">
-                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 10) * 100}%`, background: timeLeft > 5 ? "hsl(var(--accent-cyan))" : "hsl(var(--primary))" }} />
+                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 60) * 100}%`, background: timeLeft > 30 ? "hsl(var(--accent-cyan))" : "hsl(var(--primary))" }} />
                   </div>
                   <div className="text-xs text-muted-foreground font-mono">{Math.ceil(timeLeft)} сек</div>
                 </div>
