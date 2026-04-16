@@ -67,7 +67,7 @@ const SchemesSection = () => {
         </div>
 
         <div className="cyber-card p-6 mt-10">
-          <h4 className="font-mono text-[11px] font-bold text-cyan mb-3.5 uppercase tracking-wider">// Деректер көздері</h4>
+          <h4 className="font-mono text-[11px] font-bold text-cyan mb-3.5 uppercase tracking-wider">Деректер көздері</h4>
           <div className="flex flex-col gap-2">
             {sources.map((s) => (
               <div key={s.num} className="text-xs text-ink2 flex gap-2 font-mono">
