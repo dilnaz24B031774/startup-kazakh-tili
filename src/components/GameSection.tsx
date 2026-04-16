@@ -87,7 +87,7 @@ const GameSection = () => {
     setCurrent(0);
     setScore(0);
     setResults([]);
-    setTimeLeft(10);
+    setTimeLeft(60);
     setAnswered(false);
     setLastCorrect(null);
     setTimedOut(false);
