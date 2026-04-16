@@ -25,7 +25,7 @@ const FutureSection = () => (
           <div key={t.title} className="cyber-card p-7 group">
             <div className="flex items-start justify-between mb-4">
               <div className="text-[32px]">{t.icon}</div>
-              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider">[ threat.0{i + 1} ]</div>
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider">Қауіп · 0{i + 1}</div>
             </div>
             <h3 className="font-display text-2xl text-foreground mb-3 tracking-wide">{t.title}</h3>
             <p className="text-sm text-ink2 leading-relaxed">{t.text}</p>
