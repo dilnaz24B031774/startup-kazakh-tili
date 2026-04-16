@@ -78,33 +78,33 @@ const HeroSection = () => {
         <div className="flex flex-col gap-4">
           <div className="bg-surface/70 backdrop-blur-xl border border-border/60 rounded-lg p-6 hover:-translate-y-1 hover:border-cyan/40 transition-all relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan/60 to-transparent" />
-            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-2">// зиян · 2023</div>
+            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-2">Зиян · 2023</div>
             <div className="font-display text-[56px] text-foreground leading-none">₸140 <span className="text-cyan">МЛРД</span></div>
             <div className="text-[13px] text-muted-foreground font-medium mt-2">
               Қазақстандықтар жоғалтқан жалпы сома
             </div>
-            <div className="text-[10px] text-muted-foreground/60 mt-1.5 font-mono">[ src: Бас прокуратура, 2024 ]</div>
+            <div className="text-[10px] text-muted-foreground/60 mt-1.5 font-mono">Дереккөз: Бас прокуратура, 2024</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-surface/70 backdrop-blur-xl border border-border/60 rounded-lg p-5 hover:-translate-y-1 hover:border-cyan/40 transition-all">
-              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">victims</div>
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">Жәбірленуші</div>
               <div className="font-display text-4xl text-foreground leading-none">44 000+</div>
-              <div className="text-xs text-muted-foreground font-medium mt-2">Жәбірленуші — тек 2023 жылы</div>
+              <div className="text-xs text-muted-foreground font-medium mt-2">Тек 2023 жылы</div>
             </div>
             <div className="bg-surface/70 backdrop-blur-xl border border-border/60 rounded-lg p-5 hover:-translate-y-1 hover:border-cyan/40 transition-all">
-              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">growth</div>
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">Өсу</div>
               <div className="font-display text-4xl text-foreground leading-none">10 ЕСЕ</div>
-              <div className="text-xs text-muted-foreground font-medium mt-2">Соңғы 7 жылдағы өсу</div>
+              <div className="text-xs text-muted-foreground font-medium mt-2">Соңғы 7 жылда</div>
             </div>
           </div>
 
           <div className="bg-surface/70 backdrop-blur-xl border border-cyan/30 rounded-lg px-5 py-4 text-[13px] font-semibold leading-relaxed relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent pointer-events-none" />
-            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1 relative">// LIVE COUNTER</div>
+            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1 relative">Тікелей санағыш</div>
             <span className="text-xs text-ink2 relative">Бүгін Қазақстанда тіркелген алаяқтық:</span>
             <span className="font-display text-[36px] block text-foreground relative">{counter}</span>
-            <span className="text-[10px] text-muted-foreground font-mono relative">[ ресми статистика негізіндегі шамалас есеп ]</span>
+            <span className="text-[10px] text-muted-foreground font-mono relative">Ресми статистика негізіндегі шамалас есеп</span>
           </div>
         </div>
       </div>
