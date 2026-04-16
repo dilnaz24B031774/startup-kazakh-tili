@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
 import heroCyber from "@/assets/hero-cyber.jpg";
 
-const CASES_PER_SECOND = 44800 / 365 / 24 / 3600;
-
 const HeroSection = () => {
-  const [counter, setCounter] = useState(0);
-  const [startTime] = useState(Date.now());
-
-  useEffect(() => {
-    let raf: number;
-    const update = () => {
-      const elapsed = (Date.now() - startTime) / 1000;
-      setCounter(Math.floor(elapsed * CASES_PER_SECOND));
-      raf = requestAnimationFrame(update);
-    };
-    raf = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(raf);
-  }, [startTime]);
 
   return (
     <section id="hero" className="min-h-screen pt-[100px] pb-16 px-5 md:px-10 relative overflow-hidden">
@@ -48,11 +32,11 @@ const HeroSection = () => {
           <h1 className="font-display text-[clamp(60px,8vw,104px)] leading-[0.92] text-foreground mb-6 tracking-wide">
             АЛАЯҚТЫҚ
             <br />
-            <span className="text-gradient-cyber">СЕНІҢ</span>
+            <span className="text-gradient-cyber">Сенің</span>
             <br />
             ЕСІГІҢДІ
             <br />
-            ҚАҒУДА<span className="text-cyan animate-blink">_</span>
+            Қағуда<span className="text-cyan animate-blink">_</span>
           </h1>
           <p className="text-base leading-relaxed text-ink2 max-w-[460px] mb-9">
             Цифрлық алаяқтық — ең жылдам өсіп жатқан қылмыс түрі.
@@ -101,10 +85,9 @@ const HeroSection = () => {
 
           <div className="bg-surface/70 backdrop-blur-xl border border-cyan/30 rounded-lg px-5 py-4 text-[13px] font-semibold leading-relaxed relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-transparent pointer-events-none" />
-            <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1 relative">Тікелей санағыш</div>
             <span className="text-xs text-ink2 relative">Бүгін Қазақстанда тіркелген алаяқтық:</span>
-            <span className="font-display text-[36px] block text-foreground relative">{counter}</span>
-            <span className="text-[10px] text-muted-foreground font-mono relative">Ресми статистика негізіндегі шамалас есеп</span>
+            <span className="font-display text-[36px] block text-foreground relative">80+</span>
+            <span className="text-[10px] text-muted-foreground font-mono relative">шамамен (ресми статистика негізінде)</span>
           </div>
         </div>
       </div>
