@@ -5,6 +5,7 @@ const links = [
   { href: "#schemes", label: "Схемалар" },
   { href: "#warnings", label: "Белгілері" },
   { href: "#future", label: "Болашақ" },
+  { href: "#solutions", label: "Шешімдер" },
   { href: "#game", label: "Ойын" },
   { href: "#resources", label: "Ресурстар" },
   { href: "#team", label: "Топ" },
