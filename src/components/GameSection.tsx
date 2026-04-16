@@ -39,7 +39,7 @@ const GameSection = () => {
   }, []);
 
   const startTimer = useCallback(() => {
-    setTimeLeft(10);
+    setTimeLeft(60);
     stopTimer();
     timerRef.current = window.setInterval(() => {
       setTimeLeft((prev) => {
