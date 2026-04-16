@@ -195,7 +195,7 @@ const GameSection = () => {
             </>
           ) : (
             <div className="text-center py-10 px-8 cyber-card corner-brackets">
-              <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-2">// FINAL SCORE</div>
+              <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-2">Қорытынды нәтиже</div>
               <div className="font-display text-[88px] text-primary leading-none neon-text">{score}/{questions.length}</div>
               <h3 className="font-display text-3xl my-3 tracking-wide">{getFinalMessage().title}</h3>
               <p className="text-[15px] text-ink2 mb-6 max-w-md mx-auto">{getFinalMessage().desc}</p>
