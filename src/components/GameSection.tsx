@@ -109,7 +109,7 @@ const GameSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="section-label">Интерактив</div>
         <h2 className="section-title">АЛАЯҚТЫ <span className="text-primary neon-text">ТАП</span></h2>
-        <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 10 секунд.</p>
+        <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 60 секунд.</p>
 
         <div className="max-w-[680px] mx-auto">
           {/* Score chips */}
