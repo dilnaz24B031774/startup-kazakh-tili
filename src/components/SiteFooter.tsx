@@ -6,7 +6,7 @@ const SiteFooter = () => (
         <div className="font-display text-2xl text-foreground tracking-[2px]">
           САҚ<span className="text-primary">ТАН</span>
         </div>
-        <span className="font-mono text-[10px] text-muted-foreground ml-2">// 2025</span>
+        <span className="font-mono text-[10px] text-muted-foreground ml-2">2025</span>
       </div>
       <div className="flex gap-4 flex-wrap">
         {[

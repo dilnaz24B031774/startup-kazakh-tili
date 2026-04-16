@@ -27,14 +27,14 @@ const TeamSection = () => (
               {m.initials}
             </div>
             <h3 className="font-display text-xl text-foreground mb-1 tracking-wide">{m.name}</h3>
-            <div className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-3">// {m.role}</div>
+            <div className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-3">{m.role}</div>
             <div className="text-[13px] leading-relaxed italic text-ink2">{m.quote}</div>
           </div>
         ))}
       </div>
 
       <div className="cyber-card corner-brackets p-9 mt-6 text-center">
-        <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-3">// MISSION STATEMENT</div>
+        <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-3">Біздің миссиямыз</div>
         <p className="text-base leading-relaxed max-w-2xl mx-auto mb-6 text-ink2">
           «Біз — алаяқтықтың жай статистика емес, нақты адамдардың өміріне әсер ететінін сезінген студенттерміз.
           Бұл платформа хабардарлықты арттыру үшін жасалды — кез келген адам, кез келген жерде пайдалана алсын деп.»

@@ -39,7 +39,7 @@ const ProblemSection = () => (
         {problems.map((p, i) => (
           <div key={p.title} className="cyber-card p-7 group">
             <div className="flex items-center justify-between mb-4">
-              <div className="font-mono text-xs text-cyan uppercase tracking-wider">[ 0{i + 1} // {p.tag} ]</div>
+              <div className="font-mono text-xs text-cyan uppercase tracking-wider">0{i + 1} · {p.tag}</div>
               <div className="text-2xl opacity-60 group-hover:opacity-100 transition-opacity">{p.icon}</div>
             </div>
             <h3 className="font-display text-2xl text-foreground mb-3 tracking-wide">{p.title}</h3>
@@ -50,7 +50,7 @@ const ProblemSection = () => (
       </div>
 
       <div className="cyber-card p-6 mt-8">
-        <h4 className="font-mono text-[11px] font-bold text-cyan mb-3.5 uppercase tracking-wider">// Деректер көздері</h4>
+        <h4 className="font-mono text-[11px] font-bold text-cyan mb-3.5 uppercase tracking-wider">Деректер көздері</h4>
         <div className="flex flex-col gap-2">
           {sources.map((s) => (
             <div key={s.num} className="text-xs text-ink2 flex gap-2 font-mono">

@@ -33,7 +33,7 @@ const WarningsSection = () => (
           >
             <div className="font-display text-[44px] text-primary leading-none min-w-[60px] group-hover:neon-text transition-all">{w.num}</div>
             <div className="flex-1">
-              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">// flag.{w.num}</div>
+              <div className="font-mono text-[10px] text-cyan uppercase tracking-wider mb-1">Белгі · {w.num}</div>
               <h4 className="text-base font-bold mb-1 text-foreground">{w.title}</h4>
               <p className="text-[13px] leading-relaxed text-ink2">{w.text}</p>
             </div>

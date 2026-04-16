@@ -18,7 +18,7 @@ const ResourcesSection = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {resources.map((r) => (
           <div key={r.title} className="cyber-card p-6 group">
-            <div className="font-mono text-[10px] font-bold tracking-wider uppercase text-cyan mb-2.5">// {r.tag}</div>
+            <div className="font-mono text-[10px] font-bold tracking-wider uppercase text-cyan mb-2.5">{r.tag}</div>
             <h3 className="font-display text-xl text-foreground mb-2 tracking-wide">{r.title}</h3>
             <p className="text-[13px] text-ink2 leading-relaxed mb-4">{r.text}</p>
             <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-[12px] font-mono uppercase tracking-wider font-bold text-primary inline-flex items-center gap-1.5 hover:text-primary-glow transition-colors">
