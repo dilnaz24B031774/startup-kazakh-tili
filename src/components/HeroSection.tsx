@@ -1,22 +1,6 @@
-import { useEffect, useState } from "react";
 import heroCyber from "@/assets/hero-cyber.jpg";
 
-const CASES_PER_SECOND = 44800 / 365 / 24 / 3600;
-
 const HeroSection = () => {
-  const [counter, setCounter] = useState(0);
-  const [startTime] = useState(Date.now());
-
-  useEffect(() => {
-    let raf: number;
-    const update = () => {
-      const elapsed = (Date.now() - startTime) / 1000;
-      setCounter(Math.floor(elapsed * CASES_PER_SECOND));
-      raf = requestAnimationFrame(update);
-    };
-    raf = requestAnimationFrame(update);
-    return () => cancelAnimationFrame(raf);
-  }, [startTime]);
 
   return (
     <section id="hero" className="min-h-screen pt-[100px] pb-16 px-5 md:px-10 relative overflow-hidden">
