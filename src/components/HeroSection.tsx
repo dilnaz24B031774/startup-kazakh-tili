@@ -48,14 +48,14 @@ const HeroSection = () => {
           <h1 className="font-display text-[clamp(60px,8vw,104px)] leading-[0.92] text-foreground mb-6 tracking-wide">
             АЛАЯҚТЫҚ
             <br />
-            <span className="text-gradient-cyber">САҒАН</span>
+            <span className="text-gradient-cyber">СЕНІҢ</span>
             <br />
-            ДА ТИЕ
+            ЕСІГІҢДІ
             <br />
-            АЛАДЫ<span className="text-cyan animate-blink">_</span>
+            ҚАҒУДА<span className="text-cyan animate-blink">_</span>
           </h1>
           <p className="text-base leading-relaxed text-ink2 max-w-[460px] mb-9">
-            Цифрлық алаяқтық — қазіргі заманның ең жылдам өсіп жатқан қылмыс түрі.
+            Цифрлық алаяқтық — ең жылдам өсіп жатқан қылмыс түрі.
             Өзіңді және жақындарыңды қорғауды үйрен.
           </p>
           <div className="flex gap-3 flex-wrap">
