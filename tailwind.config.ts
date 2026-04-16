@@ -14,8 +14,14 @@ export default {
       fontFamily: {
         display: ['"Bebas Neue"', 'sans-serif'],
         body: ['"Manrope"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
+        "surface-2": "hsl(var(--surface-2))",
+        cyan: {
+          DEFAULT: "hsl(var(--accent-cyan))",
+          glow: "hsl(var(--accent-cyan-glow))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
