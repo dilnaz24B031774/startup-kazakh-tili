@@ -39,7 +39,7 @@ const ProblemSection = () => (
         {problems.map((p, i) => (
           <div key={p.title} className="cyber-card p-7 group">
             <div className="flex items-center justify-between mb-4">
-              <div className="font-mono text-xs text-cyan uppercase tracking-wider">[ 0{i + 1} // {p.tag} ]</div>
+              <div className="font-mono text-xs text-cyan uppercase tracking-wider">0{i + 1} · {p.tag}</div>
               <div className="text-2xl opacity-60 group-hover:opacity-100 transition-opacity">{p.icon}</div>
             </div>
             <h3 className="font-display text-2xl text-foreground mb-3 tracking-wide">{p.title}</h3>
