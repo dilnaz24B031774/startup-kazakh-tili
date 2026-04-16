@@ -161,7 +161,7 @@ const GameSection = () => {
               {!answered && (
                 <div className="text-center mb-5">
                   <div className="h-1 bg-border rounded-full overflow-hidden max-w-[340px] mx-auto mb-1.5">
-                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 10) * 100}%`, background: timeLeft > 5 ? "hsl(var(--accent-cyan))" : "hsl(var(--primary))" }} />
+                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 60) * 100}%`, background: timeLeft > 30 ? "hsl(var(--accent-cyan))" : "hsl(var(--primary))" }} />
                   </div>
                   <div className="text-xs text-muted-foreground font-mono">{Math.ceil(timeLeft)} сек</div>
                 </div>
