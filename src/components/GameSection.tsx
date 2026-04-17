@@ -225,6 +225,8 @@ const GameSection = () => {
               </button>
             </div>
           )}
+          </>
+          )}
         </div>
       </div>
     </section>
