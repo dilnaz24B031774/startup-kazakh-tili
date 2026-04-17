@@ -29,6 +29,7 @@ const GameSection = () => {
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
   const [timedOut, setTimedOut] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [started, setStarted] = useState(false);
   const timerRef = useRef<number | null>(null);
 
   const stopTimer = useCallback(() => {
@@ -57,9 +58,9 @@ const GameSection = () => {
   }, [stopTimer]);
 
   useEffect(() => {
-    if (!answered && !gameOver) startTimer();
+    if (started && !answered && !gameOver) startTimer();
     return stopTimer;
-  }, [current, gameOver, answered, startTimer, stopTimer]);
+  }, [current, gameOver, answered, started, startTimer, stopTimer]);
 
   const handleAnswer = (userSaysFraud: boolean) => {
     if (answered) return;
@@ -92,6 +93,7 @@ const GameSection = () => {
     setLastCorrect(null);
     setTimedOut(false);
     setGameOver(false);
+    setStarted(false);
   };
 
   const q = questions[current];
@@ -112,6 +114,25 @@ const GameSection = () => {
         <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 60 секунд.</p>
 
         <div className="max-w-[680px] mx-auto">
+          {!started ? (
+            <div className="text-center py-12 px-8 cyber-card corner-brackets">
+              <div className="text-6xl mb-6">🕵️</div>
+              <h3 className="font-display text-3xl md:text-4xl mb-4 tracking-wide">
+                ДЕТЕКТИВ БОЛУҒА <span className="text-primary neon-text">ДАЙЫНСЫҢ</span> БА?
+              </h3>
+              <p className="text-[15px] text-ink2 mb-8 max-w-md mx-auto leading-relaxed">
+                7 нақты SMS хабарлама. Әрқайсысына 60 секунд.<br />
+                Алаяқтықты тани аласың ба?
+              </p>
+              <button
+                onClick={() => setStarted(true)}
+                className="px-8 py-4 bg-primary text-primary-foreground rounded font-mono text-xs uppercase tracking-wider font-bold hover:bg-primary-glow transition-colors glow-border"
+              >
+                ▶ Ойынды бастау
+              </button>
+            </div>
+          ) : (
+          <>
           {/* Score chips */}
           <div className="flex gap-2 justify-center flex-wrap mb-5">
             {questions.map((_, i) => (
@@ -203,6 +224,8 @@ const GameSection = () => {
                 ↻ Қайта ойнау
               </button>
             </div>
+          )}
+          </>
           )}
         </div>
       </div>
