@@ -8,47 +8,45 @@ const members = [
 ];
 
 const TeamSection = () => (
-  <section id="team" className="section-container bg-background relative overflow-hidden">
-    <div className="absolute inset-0 cyber-grid opacity-15 pointer-events-none" />
-    <div className="max-w-7xl mx-auto relative z-10">
+  <section id="team" className="section-container bg-surface">
+    <div className="max-w-7xl mx-auto">
       <div className="section-label">Кім жасады?</div>
-      <h2 className="section-title">БІЗДІҢ <span className="text-primary neon-text">ТОП</span></h2>
+      <h2 className="section-title">БІЗДІҢ ТОП</h2>
       <p className="section-sub">
         Алаяқтыққа қарсы хабардарлықты арттыру үшін бас қосқан 6 студент.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {members.map((m) => (
-          <div key={m.name} className="cyber-card p-7 text-center group">
+          <div key={m.name} className="bg-card border border-border rounded-xl p-7 text-center shadow-sm hover:shadow-md transition-shadow">
             <div
-              className="w-[72px] h-[72px] rounded-full mx-auto mb-4 flex items-center justify-center font-display text-[26px] text-white border-2 border-border group-hover:border-primary transition-colors"
+              className="w-[72px] h-[72px] rounded-full mx-auto mb-4 flex items-center justify-center font-extrabold text-[22px] text-white"
               style={{ background: m.color }}
             >
               {m.initials}
             </div>
-            <h3 className="font-display text-xl text-foreground mb-1 tracking-wide">{m.name}</h3>
-            <div className="font-mono text-[10px] uppercase tracking-wider text-cyan mb-3">{m.role}</div>
-            <div className="text-[13px] leading-relaxed italic text-ink2">{m.quote}</div>
+            <h3 className="text-[17px] font-extrabold text-foreground mb-1">{m.name}</h3>
+            <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">{m.role}</div>
+            <div className="text-[13px] leading-[1.55] italic text-ink2">{m.quote}</div>
           </div>
         ))}
       </div>
 
-      <div className="cyber-card corner-brackets p-9 mt-6 text-center">
-        <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-3">Біздің миссиямыз</div>
-        <p className="text-base leading-relaxed max-w-2xl mx-auto mb-6 text-ink2">
+      <div className="bg-card border border-border rounded-xl p-9 mt-6 text-center shadow-sm">
+        <p className="text-base leading-[1.7] max-w-2xl mx-auto mb-6 text-ink2">
           «Біз алаяқтықтың артында тек құрғақ сандар емес, шынайы адамдар мен тағдырлар тұрғанын түсінеміз.
           Сондықтан бұл платформаны әрбір қазақстандық өзін сенімді сезінуі үшін жасадық.
-          SAQTAN — бұл білім, сақтық және сіздің қауіпсіздігіңіз.»
+          САҚТАН — бұл білім, сақтық және сіздің қауіпсіздігіңіз.»
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <a href="mailto:saktan.kz@gmail.com" className="px-5 py-2.5 rounded border border-border font-mono text-[11px] uppercase tracking-wider font-bold transition-colors hover:border-primary hover:text-primary">
-            Email
+          <a href="mailto:saktan.kz@gmail.com" className="px-5 py-2.5 rounded-lg border border-border text-sm font-bold transition-colors hover:border-primary hover:text-primary">
+            📧 Email
           </a>
-          <a href="#" className="px-5 py-2.5 rounded border border-border font-mono text-[11px] uppercase tracking-wider font-bold transition-colors hover:border-primary hover:text-primary">
-            Telegram
+          <a href="#" className="px-5 py-2.5 rounded-lg border border-border text-sm font-bold transition-colors hover:border-primary hover:text-primary">
+            ✈️ Telegram
           </a>
-          <a href="#" className="px-5 py-2.5 rounded border border-border font-mono text-[11px] uppercase tracking-wider font-bold transition-colors hover:border-primary hover:text-primary">
-            Instagram
+          <a href="#" className="px-5 py-2.5 rounded-lg border border-border text-sm font-bold transition-colors hover:border-primary hover:text-primary">
+            📸 Instagram
           </a>
         </div>
       </div>

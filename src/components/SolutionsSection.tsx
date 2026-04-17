@@ -62,35 +62,33 @@ const solutions = [
 ];
 
 const SolutionsSection = () => (
-  <section id="solutions" className="section-container bg-background relative">
-    <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
-    <div className="max-w-7xl mx-auto relative z-10">
+  <section id="solutions" className="section-container bg-surface">
+    <div className="max-w-7xl mx-auto">
       <div className="section-label">Схема бойынша қорғаныс</div>
-      <h2 className="section-title">5 СХЕМАҒА — <span className="text-cyan">5 ҚАЛҚАН</span></h2>
+      <h2 className="section-title">5 СХЕМАҒА — 5 ҚАЛҚАН</h2>
       <p className="section-sub">
         Әр алаяқтық схемасына арналған нақты іс-қимыл. Білім — ең мықты қорғаныс.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {solutions.map((s) => (
-          <div key={s.num} className="cyber-card overflow-hidden group hover:border-cyan/60 transition-colors">
-            <div className="h-px bg-gradient-to-r from-transparent via-cyan to-transparent" />
-            <div className="p-6 border-b border-border flex items-start gap-4">
-              <div className="font-display text-[44px] text-cyan/30 leading-none">{s.num}</div>
+          <div key={s.num} className="bg-card border border-border rounded-xl overflow-hidden hover:border-green hover:shadow-lg transition-all">
+            <div className="px-7 pt-6 pb-5 border-b border-border flex items-start gap-4">
+              <div className="font-display text-[44px] text-border leading-none flex-shrink-0">{s.num}</div>
               <div>
-                <h3 className="text-base font-extrabold text-foreground mb-1">{s.title}</h3>
-                <div className="font-mono text-[11px] text-muted-foreground uppercase tracking-wider">{s.target}</div>
+                <h3 className="text-[17px] font-extrabold text-foreground mb-1">{s.title}</h3>
+                <div className="text-xs text-muted-foreground font-semibold">{s.target}</div>
               </div>
             </div>
-            <div className="p-6">
-              <div className="bg-primary/10 border-l-2 border-primary rounded-r-md px-3.5 py-2.5 mb-4">
-                <div className="font-mono text-[10px] font-bold uppercase tracking-wider text-primary mb-1">Қауіп</div>
-                <p className="text-[13px] text-ink2 leading-relaxed">{s.threat}</p>
+            <div className="px-7 py-5">
+              <div className="bg-primary-light border-l-[3px] border-primary rounded-r-md px-3.5 py-2.5 mb-4">
+                <div className="text-[10px] font-bold uppercase tracking-[1px] text-primary mb-1">Қауіп</div>
+                <p className="text-[13px] text-ink2 leading-[1.5]">{s.threat}</p>
               </div>
               <div className="flex flex-col gap-2">
                 {s.actions.map((a) => (
-                  <div key={a} className="flex gap-2.5 text-[13px] text-ink2 leading-snug">
-                    <span className="text-cyan font-bold flex-shrink-0">✓</span>
+                  <div key={a} className="flex gap-2.5 text-[13px] text-ink2 leading-[1.5]">
+                    <span className="text-green font-extrabold flex-shrink-0 mt-px">✓</span>
                     <span>{a}</span>
                   </div>
                 ))}

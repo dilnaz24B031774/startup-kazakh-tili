@@ -106,19 +106,18 @@ const GameSection = () => {
   };
 
   return (
-    <section id="game" className="section-container bg-background relative">
-      <div className="absolute inset-0 cyber-grid opacity-20 pointer-events-none" />
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="game" className="section-container bg-background">
+      <div className="max-w-7xl mx-auto">
         <div className="section-label">Интерактив</div>
-        <h2 className="section-title">АЛАЯҚТЫ <span className="text-primary neon-text">ТАП</span></h2>
+        <h2 className="section-title">АЛАЯҚТЫ ТАП</h2>
         <p className="section-sub">Нақты хабарлама скриншоттарына қара — алаяқтық па, жоқ па? 7 сұрақ, әрқайсысына 60 секунд.</p>
 
         <div className="max-w-[680px] mx-auto">
           {!started ? (
-            <div className="text-center py-12 px-8 cyber-card corner-brackets">
+            <div className="text-center py-12 px-8 bg-card border border-border rounded-2xl shadow-sm">
               <div className="text-6xl mb-6">🕵️</div>
               <h3 className="font-display text-3xl md:text-4xl mb-4 tracking-wide">
-                ДЕТЕКТИВ БОЛУҒА <span className="text-primary neon-text">ДАЙЫНСЫҢ</span> БА?
+                ДЕТЕКТИВ БОЛУҒА <span className="text-primary">ДАЙЫНСЫҢ</span> БА?
               </h3>
               <p className="text-[15px] text-ink2 mb-8 max-w-md mx-auto leading-relaxed">
                 7 нақты SMS хабарлама. Әрқайсысына 60 секунд.<br />
@@ -126,7 +125,7 @@ const GameSection = () => {
               </p>
               <button
                 onClick={() => setStarted(true)}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded font-mono text-xs uppercase tracking-wider font-bold hover:bg-primary-glow transition-colors glow-border"
+                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg text-sm font-bold hover:bg-primary-dark hover:-translate-y-0.5 transition-all"
               >
                 ▶ Ойынды бастау
               </button>
@@ -138,9 +137,9 @@ const GameSection = () => {
             {questions.map((_, i) => (
               <div
                 key={i}
-                className={`w-8 h-8 rounded border flex items-center justify-center text-base font-mono ${
-                  results[i] === true ? "bg-green/20 border-green text-green" :
-                  results[i] === false || results[i] === null ? "bg-primary/20 border-primary text-primary" :
+                className={`w-8 h-8 rounded-full border flex items-center justify-center text-base font-bold ${
+                  results[i] === true ? "bg-green-light border-green text-green" :
+                  results[i] === false || results[i] === null ? "bg-primary-light border-primary text-primary" :
                   "bg-surface border-border text-muted-foreground"
                 }`}
               >
@@ -151,24 +150,24 @@ const GameSection = () => {
 
           {!gameOver ? (
             <>
-              <div className="text-center font-mono text-[11px] uppercase tracking-wider text-cyan mb-5">
+              <div className="text-center text-[12px] uppercase tracking-wider text-muted-foreground font-bold mb-5">
                 Сұрақ {current + 1} / {questions.length}
               </div>
 
               {/* Phone */}
-              <div className="bg-foreground rounded-[32px] p-4 max-w-[340px] mx-auto mb-8 shadow-2xl glow-border">
-                <div className="bg-[#f0f0f0] rounded-[20px] overflow-hidden">
-                  <div className="bg-white px-4 py-3 flex items-center gap-2.5 border-b border-[#e0e0e0]">
+              <div className="bg-[#1A1A1A] rounded-[32px] p-4 max-w-[340px] mx-auto mb-8 shadow-2xl">
+                <div className="bg-[#f0f0f0] rounded-[20px] overflow-hidden min-h-[280px]">
+                  <div className="bg-white px-4 py-3 flex items-center gap-2.5 border-b border-[#e8e8e8]">
                     <div className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style={{ background: q.avatarColor }}>
                       {q.avatar}
                     </div>
                     <div>
-                      <div className="text-[13px] font-bold text-[#111]">{q.sender}</div>
+                      <div className="text-[13px] font-bold text-[#1A1A1A]">{q.sender}</div>
                       <div className="text-[11px] text-[#888]">{q.isBank ? "SMS хабарлама" : "WhatsApp"}</div>
                     </div>
                   </div>
                   <div className="p-4">
-                    <div className="bg-white rounded-[4px_12px_12px_12px] px-3.5 py-3 text-sm text-[#111] leading-relaxed shadow-sm">
+                    <div className="bg-white rounded-[4px_12px_12px_12px] px-3.5 py-3 text-sm text-[#1A1A1A] leading-[1.55] shadow-sm">
                       {q.message.split("\n").map((line, i) => (
                         <span key={i}>{line}{i < q.message.split("\n").length - 1 && <br />}</span>
                       ))}
@@ -181,46 +180,45 @@ const GameSection = () => {
               {/* Timer */}
               {!answered && (
                 <div className="text-center mb-5">
-                  <div className="h-1 bg-border rounded-full overflow-hidden max-w-[340px] mx-auto mb-1.5">
-                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 60) * 100}%`, background: timeLeft > 30 ? "hsl(var(--accent-cyan))" : "hsl(var(--primary))" }} />
+                  <div className="h-1.5 bg-border rounded-full overflow-hidden max-w-[340px] mx-auto mb-1.5">
+                    <div className="h-full rounded-full transition-all duration-100" style={{ width: `${(timeLeft / 60) * 100}%`, background: timeLeft > 30 ? "hsl(var(--green))" : "hsl(var(--primary))" }} />
                   </div>
-                  <div className="text-xs text-muted-foreground font-mono">{Math.ceil(timeLeft)} сек</div>
+                  <div className="text-xs text-muted-foreground font-semibold">{Math.ceil(timeLeft)} сек</div>
                 </div>
               )}
 
               {/* Result */}
               {answered && (
-                <div className={`rounded-lg p-5 mb-6 text-center border ${lastCorrect ? "bg-green/10 border-green" : "bg-primary/10 border-primary"}`}>
+                <div className={`rounded-xl p-5 mb-6 text-center border ${lastCorrect ? "bg-green-light border-green" : "bg-primary-light border-primary"}`}>
                   <h3 className={`text-lg font-extrabold mb-1.5 ${lastCorrect ? "text-green" : "text-primary"}`}>
                     {timedOut ? "⏰ Уақыт өтті!" : lastCorrect ? "✓ Дұрыс!" : "✗ Қате!"}
                   </h3>
-                  <p className="text-sm text-ink2 leading-relaxed">{q.explanation}</p>
+                  <p className="text-sm text-ink2 leading-[1.55]">{q.explanation}</p>
                 </div>
               )}
 
               {/* Controls */}
               <div className={`flex gap-3 justify-center ${answered ? "opacity-50 pointer-events-none" : ""}`}>
-                <button onClick={() => handleAnswer(false)} className="px-8 py-3.5 bg-green text-background rounded font-mono text-xs uppercase tracking-wider font-bold hover:opacity-90 transition-opacity">
+                <button onClick={() => handleAnswer(false)} className="px-8 py-3.5 bg-green text-white rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
                   ✓ Қауіпсіз
                 </button>
-                <button onClick={() => handleAnswer(true)} className="px-8 py-3.5 bg-primary text-primary-foreground rounded font-mono text-xs uppercase tracking-wider font-bold hover:bg-primary-glow transition-colors glow-border">
+                <button onClick={() => handleAnswer(true)} className="px-8 py-3.5 bg-primary text-primary-foreground rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">
                   ✗ Алаяқтық!
                 </button>
               </div>
 
               {answered && (
-                <button onClick={nextQuestion} className="w-full mt-4 py-3.5 bg-foreground text-background rounded font-mono text-xs uppercase tracking-wider font-bold hover:opacity-90 transition-opacity">
+                <button onClick={nextQuestion} className="w-full mt-4 py-3.5 bg-foreground text-background rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
                   {current < questions.length - 1 ? "Келесі сұрақ →" : "Нәтижені көру →"}
                 </button>
               )}
             </>
           ) : (
-            <div className="text-center py-10 px-8 cyber-card corner-brackets">
-              <div className="font-mono text-[11px] uppercase tracking-wider text-cyan mb-2">Қорытынды нәтиже</div>
-              <div className="font-display text-[88px] text-primary leading-none neon-text">{score}/{questions.length}</div>
-              <h3 className="font-display text-3xl my-3 tracking-wide">{getFinalMessage().title}</h3>
+            <div className="text-center py-10 px-8 bg-surface border border-border rounded-2xl shadow-sm">
+              <div className="font-display text-[80px] text-primary leading-none">{score}/{questions.length}</div>
+              <h3 className="font-display text-2xl my-3 tracking-wide">{getFinalMessage().title}</h3>
               <p className="text-[15px] text-ink2 mb-6 max-w-md mx-auto">{getFinalMessage().desc}</p>
-              <button onClick={restart} className="px-7 py-3.5 bg-primary text-primary-foreground rounded font-mono text-xs uppercase tracking-wider font-bold hover:bg-primary-glow transition-colors glow-border">
+              <button onClick={restart} className="px-7 py-3.5 bg-primary text-primary-foreground rounded-lg text-sm font-bold hover:bg-primary-dark transition-colors">
                 ↻ Қайта ойнау
               </button>
             </div>

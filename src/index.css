@@ -137,6 +137,33 @@
   .corner-brackets::after {
     content: none;
   }
+
+  /* Hero diagonal surface bg (right side) */
+  .hero-diagonal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background: hsl(var(--surface));
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+
+  /* Warnings dark section */
+  .dark-section {
+    background: hsl(0 0% 10%);
+    color: hsl(0 0% 100%);
+  }
+  .dark-section .section-label {
+    color: hsl(0 73% 70%);
+  }
+  .dark-section .section-title {
+    color: hsl(0 0% 100%);
+  }
+  .dark-section .section-sub {
+    color: hsl(0 0% 67%);
+  }
 }
 
 @layer utilities {
