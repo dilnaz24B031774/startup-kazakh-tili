@@ -1,5 +1,4 @@
 import { useState } from "react";
-import scamHacker from "@/assets/scam-hacker.jpg";
 
 const schemes = [
   { num: "01", title: "«Банк қызметкері»", target: "Мақсат: барлық жас топтары", desc: "Алаяқ банк атынан қоңырау шалып, шотыңыз бұғатталды немесе күдікті операция бар деп хабарлайды. SMS-код пен карта деректерін сұрайды.\n\nБелгісі: ешбір банк телефон арқылы PIN-код, CVV немесе SMS-кодты ЕШҚАШАН сұрамайды." },
@@ -9,26 +8,14 @@ const schemes = [
   { num: "05", title: "Фишинг SMS / сілтеме", target: "Мақсат: барлық қолданушы", desc: "Мемлекет, банк немесе танымал компания атынан жалған сілтеме келеді. Басқан сәтте жеке деректер мен карта мәліметтері ұрланады. 2024 жылы 2 600-ден астам фишинг ісі тіркелген.\n\nБелгісі: сілтемедегі домен ресми сайтқа сәйкес келмейді." },
 ];
 
-const sources = [
-  { num: 4, text: "ҚПСжАЕ Бас прокуратурасы", link: "https://finprom.kz/ru/article/usherb-ot-sluchaev-internet-moshennichestva-v-kazahstane-vyros-do-7-milliardov-tenge", linkText: "2024 жылғы схемалар бойынша статистика" },
-  { num: 5, text: "ҚР ІІМ, 2024", link: "https://special.zakon.kz/cyber_fraud", linkText: "4 785 зейнеткер алданған" },
-  { num: 6, text: "BAQ.KZ, 2024", link: "https://baq.kz/qazaqstanda-internettegi-alayaqtyq-deregi-4-ke-kobeydi-336236/", linkText: "2 614 фишинг ісі" },
-];
-
 const SchemesSection = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="schemes" className="section-container bg-background relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-10 pointer-events-none hidden lg:block">
-        <img src={scamHacker} alt="" className="w-full h-full object-cover" loading="lazy" width={1280} height={1280} />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background" />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="schemes" className="section-container bg-background">
+      <div className="max-w-7xl mx-auto">
         <div className="section-label">Қалай алдайды?</div>
-        <h2 className="section-title">5 НЕГІЗГІ <span className="text-primary">СХЕМА</span></h2>
+        <h2 className="section-title">5 НЕГІЗГІ СХЕМА</h2>
         <p className="section-sub">Карточкаға басыңыз — схеманың қалай жұмыс істейтінін көресіз.</p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -38,25 +25,28 @@ const SchemesSection = () => {
               <div
                 key={s.num}
                 onClick={() => setOpenIdx(isOpen ? null : i)}
-                className={`cyber-card cursor-pointer ${isOpen ? "border-primary glow-border" : ""}`}
+                className={`border rounded-xl overflow-hidden cursor-pointer transition-all relative ${
+                  isOpen
+                    ? "border-primary bg-primary-light/30 shadow-lg"
+                    : "border-border bg-card hover:border-primary hover:shadow-lg"
+                }`}
               >
-                <div className="h-px red-gradient" />
+                <div className="h-1 bg-gradient-to-r from-primary to-primary-dark" />
                 <div className="p-7">
-                  <div className="font-mono text-[11px] text-cyan uppercase tracking-wider mb-2">Схема · {s.num}</div>
-                  <div className="font-display text-5xl text-primary/20 leading-none">{s.num}</div>
-                  <h3 className="font-display text-2xl text-foreground mt-2 mb-1 tracking-wide">{s.title}</h3>
-                  <div className="text-xs text-muted-foreground font-mono">{s.target}</div>
+                  <div className="font-display text-[48px] text-border leading-none">{s.num}</div>
+                  <h3 className="text-lg font-extrabold text-foreground mt-2 mb-1">{s.title}</h3>
+                  <div className="text-xs text-muted-foreground font-semibold">{s.target}</div>
                 </div>
                 {isOpen && (
-                  <div className="px-7 pb-7 text-[13px] text-ink2 leading-relaxed border-t border-border pt-4">
+                  <div className="px-7 pb-7 text-[13px] text-ink2 leading-[1.65] border-t border-border pt-4">
                     {s.desc.split("\n\n").map((p, j) => (
-                      <p key={j} className={j > 0 ? "mt-3 font-semibold text-primary" : ""}>{p}</p>
+                      <p key={j} className={j > 0 ? "mt-3 font-bold text-primary" : ""}>{p}</p>
                     ))}
                   </div>
                 )}
                 <div
-                  className={`absolute top-5 right-5 w-7 h-7 rounded border flex items-center justify-center text-base transition-all font-mono ${
-                    isOpen ? "bg-primary text-primary-foreground border-primary rotate-45" : "border-border text-muted-foreground"
+                  className={`absolute top-5 right-5 w-7 h-7 rounded-full flex items-center justify-center text-base transition-all ${
+                    isOpen ? "bg-primary text-primary-foreground rotate-45" : "bg-border text-muted-foreground"
                   }`}
                 >
                   +
@@ -64,18 +54,6 @@ const SchemesSection = () => {
               </div>
             );
           })}
-        </div>
-
-        <div className="cyber-card p-6 mt-10">
-          <h4 className="font-mono text-[11px] font-bold text-cyan mb-3.5 uppercase tracking-wider">Деректер көздері</h4>
-          <div className="flex flex-col gap-2">
-            {sources.map((s) => (
-              <div key={s.num} className="text-xs text-ink2 flex gap-2 font-mono">
-                <span className="text-primary font-bold min-w-[24px]">[{s.num}]</span>
-                <span>{s.text} — <a href={s.link} target="_blank" rel="noopener noreferrer" className="text-cyan hover:underline">{s.linkText}</a></span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
