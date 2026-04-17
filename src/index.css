@@ -6,61 +6,61 @@
 
 @layer base {
   :root {
-    /* Cyber dark theme */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 96%;
+    /* Light theme — ақ фон, қызыл акценттер */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 0 85% 58%;
+    --primary: 0 73% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --primary-dark: 0 75% 42%;
-    --primary-light: 0 70% 12%;
-    --primary-glow: 0 100% 65%;
+    --primary-dark: 0 100% 30%;
+    --primary-light: 0 100% 96%;
+    --primary-glow: 0 73% 60%;
 
-    --accent-cyan: 187 100% 55%;
-    --accent-cyan-glow: 187 100% 70%;
+    --accent-cyan: 0 73% 50%;
+    --accent-cyan-glow: 0 73% 60%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 60 9% 97%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 60 9% 97%;
+    --muted-foreground: 0 0% 53%;
 
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 96%;
+    --accent: 0 100% 96%;
+    --accent-foreground: 0 73% 50%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 73% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 14%;
-    --ring: 0 85% 58%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 73% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --ink: 0 0% 96%;
-    --ink2: 0 0% 70%;
-    --surface: 0 0% 7%;
-    --surface-2: 0 0% 10%;
-    --green: 145 80% 45%;
-    --green-light: 145 80% 12%;
-    --amber: 35 100% 55%;
-    --amber-light: 35 100% 12%;
+    --ink: 0 0% 10%;
+    --ink2: 0 0% 24%;
+    --surface: 60 9% 97%;
+    --surface-2: 0 0% 100%;
+    --green: 123 46% 34%;
+    --green-light: 125 39% 94%;
+    --amber: 22 100% 45%;
+    --amber-light: 33 100% 94%;
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 0 85% 58%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 73% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 0 85% 58%;
+    --sidebar-accent: 60 9% 97%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 0 73% 50%;
   }
 }
 
@@ -72,14 +72,13 @@
     @apply bg-background text-foreground;
     font-family: 'Manrope', sans-serif;
     overflow-x: hidden;
-    background-image:
-      radial-gradient(ellipse at top, hsl(0 80% 10% / 0.15), transparent 60%),
-      radial-gradient(ellipse at bottom, hsl(187 100% 30% / 0.08), transparent 60%);
-    background-attachment: fixed;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   h1, h2, h3, .font-display {
     font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
   }
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
@@ -88,14 +87,10 @@
 
 @layer components {
   .section-container {
-    @apply px-5 md:px-10 py-20 md:py-28 relative;
+    @apply px-5 md:px-10 py-16 md:py-20 relative;
   }
   .section-label {
-    @apply text-[11px] font-mono font-bold tracking-[3px] uppercase text-primary mb-3 inline-flex items-center gap-2;
-  }
-  .section-label::before {
-    content: ">";
-    @apply text-primary;
+    @apply text-[11px] font-bold tracking-[3px] uppercase text-primary mb-3 inline-block;
   }
   .section-title {
     @apply font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4 leading-none;
@@ -104,59 +99,35 @@
     @apply text-base text-ink2 leading-relaxed max-w-xl mb-12;
   }
 
-  /* Cyber grid background */
-  .cyber-grid {
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-
-  .cyber-grid-fade {
-    position: relative;
-  }
+  /* Жарық тақырыпта grid-ті өшіру (бейтарап) */
+  .cyber-grid,
   .cyber-grid-fade::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
-    background-size: 48px 48px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
-    pointer-events: none;
-    z-index: 0;
+    background-image: none !important;
   }
 
   .neon-text {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 40px hsl(var(--primary) / 0.3);
+    text-shadow: none;
   }
 
   .neon-cyan {
-    color: hsl(var(--accent-cyan));
-    text-shadow: 0 0 16px hsl(var(--accent-cyan) / 0.6);
+    color: hsl(var(--primary));
+    text-shadow: none;
   }
 
-  .glow-border {
-    box-shadow:
-      0 0 0 1px hsl(var(--primary) / 0.4),
-      0 0 30px hsl(var(--primary) / 0.15),
-      inset 0 0 30px hsl(var(--primary) / 0.05);
-  }
-
+  .glow-border,
   .glow-border-cyan {
-    box-shadow:
-      0 0 0 1px hsl(var(--accent-cyan) / 0.4),
-      0 0 30px hsl(var(--accent-cyan) / 0.15);
+    box-shadow: 0 1px 3px hsl(var(--foreground) / 0.04);
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
   }
 
   .cyber-card {
-    @apply bg-surface border border-border rounded-lg relative overflow-hidden transition-all;
+    @apply bg-card border border-border rounded-xl relative overflow-hidden transition-all;
   }
   .cyber-card:hover {
-    border-color: hsl(var(--primary) / 0.6);
-    box-shadow: 0 0 24px hsl(var(--primary) / 0.15);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 8px 24px hsl(var(--primary) / 0.10);
+    transform: translateY(-2px);
   }
 
   .corner-brackets {
@@ -164,45 +135,22 @@
   }
   .corner-brackets::before,
   .corner-brackets::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border: 2px solid hsl(var(--primary));
-    pointer-events: none;
-  }
-  .corner-brackets::before {
-    top: -1px;
-    left: -1px;
-    border-right: none;
-    border-bottom: none;
-  }
-  .corner-brackets::after {
-    bottom: -1px;
-    right: -1px;
-    border-left: none;
-    border-top: none;
+    content: none;
   }
 }
 
 @layer utilities {
   .red-gradient {
-    background: linear-gradient(90deg, transparent, hsl(var(--primary)), hsl(var(--primary-glow)), hsl(var(--primary)), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), hsl(var(--primary-dark)), hsl(var(--primary)), transparent);
   }
   .text-gradient-cyber {
-    background: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--accent-cyan)));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: hsl(var(--primary));
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
   }
   .scan-lines {
-    background-image: repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 2px,
-      hsl(0 0% 100% / 0.02) 2px,
-      hsl(0 0% 100% / 0.02) 4px
-    );
+    background-image: none;
   }
 }
 
@@ -217,18 +165,12 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  0%, 100% { box-shadow: 0 0 0 hsl(var(--primary) / 0); }
+  50% { box-shadow: 0 0 0 hsl(var(--primary) / 0); }
 }
 
 @keyframes flicker {
   0%, 100% { opacity: 1; }
-  41.99% { opacity: 1; }
-  42% { opacity: 0.6; }
-  43% { opacity: 1; }
-  47.99% { opacity: 1; }
-  48% { opacity: 0.4; }
-  49% { opacity: 1; }
 }
 
 @keyframes blink-caret {
@@ -236,6 +178,6 @@
   50% { opacity: 0; }
 }
 
-.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
-.animate-flicker { animation: flicker 5s linear infinite; }
+.animate-glow-pulse { animation: none; }
+.animate-flicker { animation: none; }
 .animate-blink { animation: blink-caret 1s step-end infinite; }
